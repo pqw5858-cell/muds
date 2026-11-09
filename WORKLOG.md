@@ -547,3 +547,8 @@
 
 - 사용자 요청: 이벤트 배너 이미지에 쓴 글꼴도 명시 — 붉어진 선비 배너는 제주한라산체, 갓잔 배너의 NEW는 Segoe UI.
 - 변경: README 출처의 글꼴을 사이트 글꼴(Pretendard·Roboto·부산단디명조, 쓰는 곳)과 배너 이미지 글꼴(제주한라산체·Segoe UI, 이미지 속 글자라 글꼴 파일은 불러오지 않음)로 나눠 적음. 글꼴 파일은 추가하지 않음.
+
+## 2026-11-09: Firebase 승인된 도메인 확인
+
+- 사용자가 Firebase 콘솔에 `muds.vercel.app` 추가.
+- 확인: Firebase 프로젝트 설정 조회 → 승인된 도메인 localhost, muds-kitchen.firebaseapp.com, muds-kitchen.web.app, muds.vercel.app. 배포 사이트 로그인 화면에서 "Google 계정으로 로그인"을 마우스로 누르면 구글 계정 선택 창(accounts.google.com)이 열림, 도메인 오류·콘솔 오류 없음. 실제 로그인·계정 생성은 하지 않음.
