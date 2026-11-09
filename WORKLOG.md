@@ -552,3 +552,9 @@
 
 - 사용자가 Firebase 콘솔에 `muds.vercel.app` 추가.
 - 확인: Firebase 프로젝트 설정 조회 → 승인된 도메인 localhost, muds-kitchen.firebaseapp.com, muds-kitchen.web.app, muds.vercel.app. 배포 사이트 로그인 화면에서 "Google 계정으로 로그인"을 마우스로 누르면 구글 계정 선택 창(accounts.google.com)이 열림, 도메인 오류·콘솔 오류 없음. 실제 로그인·계정 생성은 하지 않음.
+
+## 2026-11-09: 커서 이미지 파일명 변경
+
+- 사용자 요청: 커서 이미지 이름을 "cursor-img" 형식으로.
+- 변경: `C_line_32/64.png` → `cursor-img-32/64.png`, `C_line_tilt_32/64.png` → `cursor-img-tilt-32/64.png`(git mv로 이력 유지). 저장소에 안 올리는 원본 `C_line_512.png` → `cursor-img-512.png`(.gitignore도 수정). `index.css` 커서 경로·주석 수정.
+- 검증: 개발 서버 CSS에 새 이름 4개 연결, `vite build` 성공.
