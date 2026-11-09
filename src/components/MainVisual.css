@@ -1,0 +1,58 @@
+/* 크기는 프레임 폭 비율 (500px 기준: 높이 500, 이미지 400 x 500, 간격 30) → 휴대폰에서도 같은 비율 */
+.main-visual {
+  position: relative;
+  height: var(--frame-width);
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+/* 옆으로 흐르는 이미지 줄 (위치는 JS에서 transform으로 이동) */
+.main-visual__track {
+  display: flex;
+  gap: calc(var(--frame-width) * 0.06);
+  width: max-content;
+  cursor: grab;
+  touch-action: pan-y; /* 모바일에서 세로 스크롤은 유지 */
+  user-select: none;
+  will-change: transform;
+}
+
+.main-visual__track:active {
+  cursor: grabbing;
+}
+
+.main-visual__slide {
+  position: relative;
+  width: calc(var(--frame-width) * 0.8);
+  height: var(--frame-width);
+  flex-shrink: 0;
+}
+
+.main-visual__slide img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 이미지 하단 반투명 그라디언트 (문구 가독성) */
+.main-visual__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.45) 100%);
+  pointer-events: none;
+}
+
+/* 이미지 위에 고정된 문구 */
+.main-visual__copy {
+  position: absolute;
+  left: calc(var(--frame-width) * 0.142); /* 500px 기준 71px */
+  bottom: calc(var(--frame-width) * 0.044); /* 22px */
+  color: #fff;
+  font-family: "BusanDandiMyeongjo", serif;
+  font-weight: 400;
+  font-size: calc(var(--frame-width) * 0.06); /* 30px */
+  line-height: 1.6;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* X 0, Y 4px, 흐림 4px, #000 25% */
+  pointer-events: none; /* 문구 위에서도 드래그 가능하도록 */
+}

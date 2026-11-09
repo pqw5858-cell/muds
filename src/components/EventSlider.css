@@ -1,0 +1,50 @@
+.event-slider {
+  margin-top: 62px; /* 시안: BEST ITEM 더보기 버튼 아래 62px */
+}
+
+/* 제목 가운데, 화살표는 프레임 끝에서 18px 안쪽 (높이 24px)
+   제목 폭(61.39px)이 소수점이라 양쪽 정렬하면 화살표가 1181.98px에 걸리므로 절대 위치로 고정 */
+.event-slider__header {
+  position: relative;
+  height: 24px;
+}
+
+.event-slider__arrow {
+  position: absolute;
+  top: 4px; /* (24 - 16) / 2 */
+  display: flex;
+}
+
+.event-slider__arrow:first-child {
+  left: 18px;
+}
+
+.event-slider__arrow:last-child {
+  right: 18px;
+}
+
+.event-slider__viewport {
+  margin-top: 23px; /* 시안: 제목 줄 아래 23px */
+  overflow: hidden;
+}
+
+.event-slider__track {
+  display: flex;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  will-change: transform;
+}
+
+.event-slider__track.is-dragging {
+  cursor: grabbing;
+}
+
+.event-slider__slide {
+  flex: 0 0 100%;
+}
+
+.event-slider__slide img {
+  width: 100%;
+  height: auto;
+}

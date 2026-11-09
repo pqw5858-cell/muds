@@ -1,0 +1,8 @@
+.new-banner {
+  margin-top: 63px; /* 시안: WEEKLY BEST 진행 바 아래 63px */
+}
+
+.new-banner img {
+  width: 100%;
+  height: auto;
+}

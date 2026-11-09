@@ -1,0 +1,121 @@
+/* 결제 성공·실패 공용 */
+.checkout-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-10) 20px var(--space-16);
+  text-align: center;
+}
+
+.checkout-result__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-top: 32px;
+  border-radius: 50%;
+  background: var(--surface-warm);
+  color: var(--sale-red);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.checkout-result__icon.is-success {
+  background: var(--brown-800);
+  color: #fff;
+}
+
+.checkout-result__title {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.checkout-result__desc {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #979797;
+}
+
+.checkout-result__code {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #b0b0b0;
+}
+
+/* 주문 정보 */
+.checkout-result__info {
+  width: 100%;
+  margin-top: 28px;
+  padding: 18px 16px;
+  background: #f7f7f7;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: left;
+}
+
+.checkout-result__info div {
+  display: flex;
+  gap: 16px;
+}
+
+.checkout-result__info div + div {
+  margin-top: 8px;
+}
+
+.checkout-result__info dt {
+  flex: none;
+  width: 70px;
+  color: #979797;
+}
+
+.checkout-result__info dd {
+  word-break: keep-all;
+}
+
+.checkout-result__info .is-total {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.checkout-result__info .is-total dd {
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brown-800);
+}
+
+.checkout-result__actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 28px;
+}
+
+.checkout-result__button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  margin-top: 0;
+  background: var(--brown-800);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.checkout-result__button.is-line {
+  border: 1px solid var(--brown-800);
+  background: #fff;
+  color: var(--brown-800);
+}
+
+/* 단독으로 쓰일 때(주문 정보 확인 불가) */
+.checkout-result > .checkout-result__button {
+  width: 100%;
+  margin-top: 28px;
+}

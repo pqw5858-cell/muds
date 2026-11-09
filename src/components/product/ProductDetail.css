@@ -1,0 +1,31 @@
+/* 상세 이미지: 프레임 폭으로 세로로 이어 붙임 */
+.product-detail__images {
+  margin-top: 21px;
+}
+
+.product-detail__images img {
+  width: 100%;
+}
+
+/* 상품 정보 표 */
+.product-detail__specs {
+  width: calc(100% - 40px);
+  margin: var(--space-10) 20px 0;
+  border-collapse: collapse;
+  border-top: 1px solid var(--ink);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.product-detail__specs th,
+.product-detail__specs td {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.product-detail__specs th {
+  width: 110px;
+  font-weight: 400;
+  color: #979797;
+}

@@ -1,0 +1,25 @@
+.quantity-stepper {
+  display: flex;
+  height: 30px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.quantity-stepper button {
+  width: 30px;
+  font-size: 16px;
+}
+
+.quantity-stepper button:disabled {
+  color: var(--gray-300);
+  cursor: var(--cursor);
+}
+
+.quantity-stepper output {
+  width: 40px;
+  border-right: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 28px;
+  text-align: center;
+}

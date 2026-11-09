@@ -1,0 +1,60 @@
+/* 프레임 영역 레이어: 결제 바(200) 위, 내비게이션(300) 아래 */
+.postcode-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 260;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--frame-width);
+  padding: 20px;
+  transform: translateX(-50%);
+}
+
+.postcode-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.postcode-modal__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: min(560px, 100%);
+  background: #fff;
+}
+
+.postcode-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 16px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.postcode-modal__head h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.postcode-modal__head button {
+  display: flex;
+  padding: 4px;
+}
+
+.postcode-modal__error {
+  padding: 24px 20px;
+  font-size: 13px;
+  color: var(--sale-red);
+}
+
+/* 카카오 주소 검색 화면이 그려지는 곳 */
+.postcode-modal__body {
+  flex: 1;
+  min-height: 0;
+}

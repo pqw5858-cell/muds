@@ -1,0 +1,180 @@
+/* 대표 이미지: 프레임 폭 정사각형 */
+.product-summary__image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--surface-warm);
+}
+
+.product-summary__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-summary__sold-out {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink);
+  font-family: var(--font-latin);
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+
+/* 상품 정보 */
+.product-summary__info {
+  padding: 24px 20px 20px;
+}
+
+.product-summary__category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-latin);
+  font-size: 11px;
+  line-height: 13px;
+  color: #a4a4a4;
+}
+
+.product-summary__badge {
+  padding: 2px 6px;
+  border: 1px solid var(--brown-800);
+  border-radius: var(--radius-pill);
+  color: var(--brown-800);
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.product-summary__name {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+
+.product-summary__desc {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #979797;
+}
+
+.product-summary__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.product-summary__rating.is-empty {
+  color: #979797;
+}
+
+.product-summary__rating span {
+  color: #979797;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 가격: 정가(취소선) + 할인율(빨강) + 판매가 */
+.product-summary__price {
+  margin-top: 18px;
+}
+
+.product-summary__price del {
+  font-size: 13px;
+  line-height: 16px;
+  color: #979797;
+}
+
+.product-summary__price p {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 2px;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.product-summary__rate {
+  font-weight: 700;
+  color: var(--sale-red);
+}
+
+.product-summary__price strong {
+  font-weight: 700;
+  color: #000;
+}
+
+.product-summary__tags {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--brown-800);
+}
+
+.product-summary__notes {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #979797;
+}
+
+.product-summary__notes li::before {
+  content: "· ";
+}
+
+/* 배송 정보: 위아래 구분선 */
+.product-summary__shipping {
+  margin: 0 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.product-summary__shipping div {
+  display: flex;
+}
+
+.product-summary__shipping div + div {
+  margin-top: 6px;
+}
+
+.product-summary__shipping dt {
+  flex: none;
+  width: 64px;
+  color: #979797;
+}
+
+.product-summary__shipping dd span {
+  display: block;
+  color: #979797;
+}
+
+/* 예약주문·단독구매 안내 */
+.product-summary__alerts {
+  margin: 14px 20px 0;
+  padding: 12px 14px;
+  background: var(--surface-warm);
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--brown-800);
+}
+
+.product-summary__alerts li + li {
+  margin-top: 4px;
+}
+
+/* 영어: 제목이 길어서 칸을 넓힘 */
+:lang(en) .product-summary__shipping dt {
+  width: 84px;
+  margin-right: 8px; /* International이 내용과 붙지 않게 */
+}

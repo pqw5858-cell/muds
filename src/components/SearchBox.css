@@ -1,0 +1,60 @@
+/* 검색 입력창: 높이 46px, 테두리 3px #4a2723 */
+.search-box__form {
+  position: relative;
+}
+
+.search-box__input {
+  width: 100%;
+  height: 46px;
+  padding: 0 48px 0 16px;
+  border: 3px solid var(--brown-800);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+/* 브라우저 기본 검색어 지우기(X)는 파란색이라 숨기고 같은 자리에 회색 X를 그림 (지우기 기능은 그대로) */
+.search-box__input::-webkit-search-cancel-button {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath d='M1 1l10 10M11 1L1 11' stroke='%23b0b0b0' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+  cursor: var(--cursor-hover);
+  appearance: none;
+}
+
+.search-box__input::placeholder {
+  color: var(--gray-400);
+}
+
+.search-box__button {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  display: flex;
+  transform: translateY(-50%);
+}
+
+/* 인기 검색어 */
+.search-box__title {
+  margin-top: 30px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.search-box__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 5px;
+  margin-top: 11px;
+}
+
+.search-box__keyword {
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  background: var(--brown-800);
+  color: #fff;
+  font-size: 12px;
+}

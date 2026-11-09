@@ -1,0 +1,29 @@
+/* 프레임 오른쪽 끝에서 16px 안쪽, 하단 바(60px) 위 16px */
+.scroll-top {
+  position: fixed;
+  right: calc(50% - var(--frame-width) / 2 + 16px);
+  bottom: calc(var(--bottom-bar-height) + 16px);
+  z-index: 190; /* 하단 바(200) 아래 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}

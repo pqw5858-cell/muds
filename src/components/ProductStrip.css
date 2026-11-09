@@ -1,0 +1,136 @@
+/* 상품 썸네일 가로 목록 (마이페이지 찜·최근 본 상품, 브랜드 컬렉션) */
+.product-strip {
+  margin-top: 32px;
+}
+
+.product-strip__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.product-strip__head h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.product-strip__head h3 span {
+  margin-left: 4px;
+  color: var(--brown-800);
+}
+
+.product-strip__head a {
+  font-size: 12px;
+  color: #979797;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.product-strip__empty {
+  padding: 28px 0;
+  font-size: 13px;
+  text-align: center;
+  color: #979797;
+}
+
+/* 좌우로 넘겨보는 목록 (스크롤바 숨김) */
+.product-strip__list {
+  position: relative; /* 안의 숨김 글자(.blind, 절대 위치)가 스크롤 영역 밖으로 빠져나가 페이지를 넓히지 않게 */
+  display: flex;
+  gap: 10px;
+  margin: 14px -20px 0;
+  padding: 0 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 20px; /* 칸 맞춤 멈춤 위치에 왼쪽 여백 반영 (첫 상품이 잘리지 않게) */
+  scrollbar-width: none;
+}
+
+.product-strip__list::-webkit-scrollbar {
+  display: none;
+}
+
+.product-strip__list li {
+  flex: none;
+  width: 104px;
+  scroll-snap-align: start;
+}
+
+.product-strip__list img {
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  background: var(--surface-warm);
+}
+
+.product-strip__name {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-strip__price {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-strip__desc {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #777;
+  word-break: keep-all;
+}
+
+/* 마우스로 끄는 중: 칸 맞춤을 잠시 끄고 손 모양 커서 */
+.product-strip__list {
+  cursor: grab;
+}
+
+/* 끄는 중·미끄러지는 중에는 CSS 칸 맞춤을 끄고 스크립트가 부드럽게 맞춤 */
+.product-strip__list.is-gliding {
+  scroll-snap-type: none;
+}
+
+.product-strip__list.is-dragging {
+  cursor: grabbing;
+}
+
+.product-strip__list.is-dragging a {
+  pointer-events: none;
+}
+
+/* 맨 끝 + 더보기 칸: 상품 사진과 같은 104px 네모 */
+.product-strip__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 104px;
+  height: 104px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: #777;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.product-strip__more:hover {
+  border-color: var(--brown-800);
+  color: var(--brown-800);
+}
+
+.product-strip__more-icon {
+  font-family: var(--font-latin);
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1;
+}

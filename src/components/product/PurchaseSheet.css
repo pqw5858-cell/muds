@@ -1,0 +1,148 @@
+/* 프레임 영역 레이어: 구매 바(200) 위, 검색창(250)·내비게이션(300) 아래 */
+.purchase-sheet {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 220;
+  width: var(--frame-width);
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition: visibility 0s 0.3s; /* 닫힘 모션이 끝난 뒤 숨김 */
+}
+
+.purchase-sheet.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  transition: none;
+}
+
+.purchase-sheet__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.purchase-sheet.is-open .purchase-sheet__backdrop {
+  opacity: 1;
+}
+
+/* 아래에서 위로 올라오는 패널 (위쪽 모서리만 둥글게) */
+.purchase-sheet__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 20px 20px;
+  border-radius: 20px 20px 0 0;
+  background: #fff;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.purchase-sheet.is-open .purchase-sheet__panel {
+  transform: translateY(0);
+}
+
+/* 손잡이 (누르면 닫힘) */
+.purchase-sheet__handle {
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+
+.purchase-sheet__handle::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+}
+
+/* 선택한 상품 */
+.purchase-sheet__item {
+  padding: 16px;
+  background: #f7f7f7;
+}
+
+.purchase-sheet__name {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.purchase-sheet__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.purchase-sheet__row strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.purchase-sheet__notice {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--brown-800);
+}
+
+/* 배송비 + 총 결제 금액 */
+.purchase-sheet__total {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.purchase-sheet__total div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchase-sheet__total div + div {
+  margin-top: 6px;
+}
+
+.purchase-sheet__total dt {
+  color: #979797;
+}
+
+.purchase-sheet__total .is-sum dt {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.purchase-sheet__total .is-sum dd {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brown-800);
+}
+
+.purchase-sheet__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.purchase-sheet__actions button {
+  flex: 1;
+  height: 48px;
+  background: var(--brown-800);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.purchase-sheet__actions .is-line {
+  border: 1px solid var(--brown-800);
+  background: #fff;
+  color: var(--brown-800);
+}

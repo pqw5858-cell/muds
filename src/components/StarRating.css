@@ -1,0 +1,13 @@
+.star-rating {
+  display: inline-flex;
+  gap: 2px;
+  vertical-align: middle;
+}
+
+.star-rating svg {
+  fill: var(--line); /* 빈 별 */
+}
+
+.star-rating svg.is-filled {
+  fill: var(--brown-800);
+}

@@ -1,0 +1,85 @@
+.weekly-best {
+  margin-top: 60px;
+}
+
+/* 카테고리 탭 */
+.weekly-best__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 11px;
+}
+
+.weekly-best__tab {
+  height: 24px;
+  padding: 0 11px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-latin);
+  font-size: 12px;
+  color: var(--gray-300);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.weekly-best__tab.is-active {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+/* 캐러셀: viewport가 넘치는 부분을 숨기고, track을 transform으로 이동 */
+.weekly-best__viewport {
+  margin-top: 20px;
+  overflow: hidden;
+  /* 카드 아래로 나오는 품절 뱃지까지 보이도록 잘라내는 영역만 30px 늘리고,
+     같은 만큼 음수 여백을 줘서 레이아웃 높이는 그대로 유지 */
+  padding-bottom: 30px;
+  margin-bottom: -30px;
+}
+
+.weekly-best__track {
+  display: flex;
+  gap: 2px; /* 시안: 카드 165 / 166 / 165, 간격 2px */
+  width: 100%;
+  cursor: grab;
+  touch-action: pan-y; /* 세로 스크롤은 브라우저, 가로 드래그는 캐러셀이 처리 */
+  user-select: none;
+  will-change: transform;
+}
+
+.weekly-best__track.is-dragging {
+  cursor: grabbing;
+}
+
+.weekly-best__item {
+  flex: 0 0 calc((100% - 4px) / 3); /* 한 화면에 3개 */
+  min-width: 0; /* 긴 상품명 때문에 카드가 넓어지지 않도록 */
+}
+
+/* 카드 폭이 165.33px(소수점)이라 정사각형이면 높이도 소수점이 되어 아래 섹션이 어긋남
+   → 시안 높이 165px로 고정 (폭과 0.33px 차이는 object-fit: cover로 처리) */
+.weekly-best__item .product-card__thumb {
+  aspect-ratio: auto;
+  height: 165px;
+}
+
+/* 품절 뱃지가 카드 높이를 늘리면 탭마다 섹션 높이가 달라져 아래 페이지가 밀림
+   → 자리는 그대로(노트 아래) 두되 높이 계산에서 제외 */
+.weekly-best__item .product-card__sold-out {
+  position: absolute;
+}
+
+/* 하단 진행 바 */
+.weekly-best__progress {
+  position: relative;
+  height: 2px;
+  margin-top: 45px;
+  background: var(--line);
+}
+
+.weekly-best__progress span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #5f5f5f;
+}

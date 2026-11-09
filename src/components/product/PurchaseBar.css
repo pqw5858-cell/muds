@@ -1,0 +1,76 @@
+/* 탭바와 같은 자리·크기: 화면 아래 고정, 500px, 높이 60px */
+.purchase-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 200;
+  display: flex;
+  gap: 8px;
+  width: var(--frame-width);
+  height: var(--bottom-bar-height);
+  padding: 8px 12px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.purchase-bar__like {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  border: 1px solid var(--line);
+}
+
+.purchase-bar__button {
+  flex: 1;
+  background: var(--brown-800);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.purchase-bar__button.is-line {
+  border: 1px solid var(--brown-800);
+  background: #fff;
+  color: var(--brown-800);
+}
+
+/* 장바구니 담기 알림: 구매 바 바로 위 */
+.purchase-bar__toast {
+  position: fixed;
+  bottom: calc(var(--bottom-bar-height) + 12px);
+  left: 50%;
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(var(--frame-width) - 24px);
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background: rgba(32, 32, 32, 0.92);
+  color: #fff;
+  font-size: 13px;
+  transform: translateX(-50%);
+  animation: toast-in 0.25s ease-out;
+}
+
+.purchase-bar__toast a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}
+
+.purchase-bar__button.is-disabled {
+  background: var(--gray-300);
+  cursor: var(--cursor);
+}

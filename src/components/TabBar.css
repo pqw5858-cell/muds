@@ -1,0 +1,67 @@
+/* 하단 탭바: 화면 아래 고정, 가운데 500px 프레임 폭, 높이 60px (윗선 1px 포함) */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 200; /* 헤더(100)보다 위 */
+  width: var(--frame-width);
+  height: 60px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+/* 5칸 x 100px */
+.tab-bar__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 100%;
+}
+
+/* 아이콘 + 글자를 칸 가운데에 세로로 배치 */
+.tab-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* 다섯 칸 공통: 아이콘 20px + 간격 8px + 글자 */
+.tab-bar__drawn {
+  gap: 8px;
+}
+
+.tab-bar__drawn-icon {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* 시안: 지름 14px, 아이콘 기준 오른쪽 12px / 위로 1px */
+.tab-bar__badge {
+  position: absolute;
+  top: -1px;
+  left: 12px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f07263;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 14px;
+  text-align: center;
+}
+
+/* 글자: 다섯 칸 모두 같은 크기·굵기·색 */
+.tab-bar__label {
+  color: #222;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 11px;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}

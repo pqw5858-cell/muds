@@ -1,0 +1,112 @@
+/* 메인 이벤트 팝업: 탭바(200)·토스트(210)·옵션 창(220) 위, 검색창(250)·내비(300)보다도 위 */
+.promo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 310;
+}
+
+/* 누르면 닫히는 영역은 화면 전체, 어둡게 하는 건 프레임 폭만 (검색창 배경과 같은 방식) */
+.promo-modal__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.promo-modal__backdrop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: var(--frame-width);
+  background: rgba(0, 0, 0, 0.4);
+  transform: translateX(-50%);
+  animation: promo-dim 0.3s ease both;
+}
+
+/* 아래에서 올라오는 창: 프레임 폭, 위쪽 모서리 둥글게 */
+.promo-modal__sheet {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: var(--frame-width);
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: #fff;
+  animation: promo-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes promo-dim {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes promo-up {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* 배너 슬라이드 (원래 비율 500 x 362, 화면이 낮으면 높이를 줄이고 가운데 기준으로 자름) */
+.promo-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-slider__track {
+  display: flex;
+  touch-action: pan-y; /* 세로 스크롤 제스처는 브라우저에 맡김 */
+  user-select: none;
+  cursor: grab;
+}
+
+.promo-slider__track li {
+  flex: 0 0 100%;
+}
+
+.promo-slider__track img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 140px);
+  object-fit: cover;
+}
+
+/* 쪽 번호 (오른쪽 위) */
+.promo-slider__count {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-family: var(--font-latin);
+  font-size: 11px;
+  line-height: 15px;
+  pointer-events: none;
+}
+
+/* 아래 흰 띠: 오늘 하루 보지 않기 / 닫기 */
+.promo-modal__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.promo-modal__bar button {
+  height: 100%;
+  color: #555;
+}
+
+.promo-modal__bar button:last-child {
+  color: var(--ink);
+  font-weight: 600;
+}

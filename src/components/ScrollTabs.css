@@ -1,0 +1,61 @@
+/* 가로 탭 (상품 목록 카테고리·컬렉션): 스크롤 시 헤더 바로 아래 고정, 가로로 넘겨봄 (스크롤바 숨김) */
+.scroll-tabs {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 50;
+  margin-top: 24px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.scroll-tabs__list {
+  display: flex;
+  gap: 22px;
+  padding: 0 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scroll-tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-tabs__item {
+  position: relative;
+  display: block;
+  height: var(--tab-height);
+  line-height: var(--tab-height);
+  font-family: var(--font-latin);
+  font-size: 13px;
+  white-space: nowrap;
+  color: #979797;
+}
+
+.scroll-tabs__item.is-active {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 현재 탭 밑줄 (상세페이지 탭과 같은 모양) */
+.scroll-tabs__item.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* 마우스로 끄는 중 */
+.scroll-tabs__list {
+  cursor: grab;
+}
+
+.scroll-tabs__list.is-dragging {
+  cursor: grabbing;
+}
+
+.scroll-tabs__list.is-dragging a {
+  pointer-events: none;
+}

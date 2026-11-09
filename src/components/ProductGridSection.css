@@ -1,0 +1,36 @@
+.product-grid {
+  margin-top: 60px; /* 시안: 이전 섹션 아래 60px (NEW ARRIVALS, BEST ITEM 동일) */
+}
+
+/* 2열 그리드: 카드 244px × 2 + 좌우 여백 4px + 간격 4px = 500px */
+.product-grid__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 긴 상품명이 칸을 넓히지 않게 (좁은 휴대폰) */
+  column-gap: 4px;
+  row-gap: 30px; /* 시안: 줄 간격 386px = 이미지 244 + 정보 112 + 간격 30 */
+  margin-top: 21px;
+  padding: 0 4px;
+}
+
+/* 시안 기준 텍스트 위치 (WEEKLY BEST보다 카테고리가 1px 위) */
+.product-grid__list .product-card__info {
+  min-height: 112px; /* 품절 뱃지가 없어도 줄 높이 유지 */
+  padding-top: 12px;
+}
+
+.product-grid__list .product-card__name {
+  margin-top: 7px;
+}
+
+/* 더보기 버튼: 시안 136 x 38px */
+.product-grid__more {
+  display: block;
+  width: 136px;
+  height: 38px;
+  margin: 40px auto 0;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-pill);
+  padding-top: 2px; /* 시안: 글자가 세로 가운데보다 1px 아래 */
+  color: var(--gray-300);
+  font-size: 12px;
+}

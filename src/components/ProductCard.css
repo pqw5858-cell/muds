@@ -1,0 +1,97 @@
+/* 카드 전체가 상세페이지 링크 영역 (상품명 링크의 ::after가 카드를 덮음) */
+.product-card {
+  position: relative;
+}
+
+.product-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* 이미지 영역: 카드 폭에 맞춘 정사각형 */
+.product-card__thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface-warm);
+}
+
+.product-card__thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__like {
+  position: absolute;
+  z-index: 1; /* 카드 링크 영역보다 위 (누를 때 상세페이지로 이동하지 않음) */
+  right: 6px;
+  bottom: 6px;
+  display: flex;
+  padding: 2px;
+}
+
+/* 텍스트: 줄 높이를 정수(px)로 고정해 소수점 오차가 생기지 않게 함 */
+.product-card__info {
+  padding: 13px 4px 0;
+}
+
+.product-card__category {
+  font-family: var(--font-latin);
+  font-size: 11px;
+  line-height: 13px;
+  color: #a4a4a4;
+}
+
+.product-card__name {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.product-card__original {
+  color: #979797;
+}
+
+.product-card__sale {
+  font-weight: 700;
+  color: #000;
+}
+
+.product-card__rate {
+  font-weight: 700;
+  color: var(--sale-red);
+}
+
+.product-card__note {
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 13px;
+  min-height: 13px; /* 노트가 없어도 줄 자리를 유지해 아래 뱃지 위치가 같도록 */
+  color: #979797;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 품절 뱃지: 시안에서 카드 왼쪽 끝에 붙어 있음 (텍스트 여백 4px 상쇄) */
+.product-card__sold-out {
+  display: block;
+  margin: 11px 0 0 -4px;
+}

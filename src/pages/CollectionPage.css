@@ -1,0 +1,19 @@
+.collection-page {
+  padding-top: var(--space-10);
+}
+
+.collection-page__label {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--brown-800);
+}
+
+.collection-page__desc {
+  margin: 6px 20px 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #979797;
+  word-break: keep-all;
+}

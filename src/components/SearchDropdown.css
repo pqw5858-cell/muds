@@ -1,0 +1,60 @@
+/* 시안(search.png): 폭 500px, 높이 237px, 안쪽 여백 37px, 아래 모서리만 둥글게(50px)
+   화면 맨 위에 고정되어 띠배너·헤더를 덮음 */
+.search-dropdown {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 250; /* 탭바(200) 위, 내비게이션(300) 아래 */
+  width: var(--frame-width);
+  padding: 37px;
+  border-radius: 0 0 50px 50px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+
+  /* 닫힘: 아래에서 위로 말려 올라감 (0.3초), 끝난 뒤 숨김 */
+  clip-path: inset(0 -20px 100% -20px);
+  visibility: hidden;
+  transition:
+    clip-path 0.3s ease-in-out,
+    visibility 0s 0.3s;
+}
+
+/* 열림: 위에서 아래로 드러남 (0.3초). 좌우·아래 -20px은 그림자가 잘리지 않게 */
+.search-dropdown.is-open {
+  clip-path: inset(0 -20px -20px -20px);
+  visibility: visible;
+  transition: clip-path 0.3s ease-in-out;
+}
+
+/* 인기 검색어: 열릴 때 0.2초 뒤부터 1.2초 동안 서서히 나타남, 닫힐 때는 접힌 뒤 초기화 */
+.search-dropdown .search-box__title,
+.search-dropdown .search-box__keywords {
+  opacity: 0;
+  transition: opacity 0s 0.3s;
+}
+
+.search-dropdown.is-open .search-box__title,
+.search-dropdown.is-open .search-box__keywords {
+  opacity: 1;
+  transition: opacity 1.2s ease 0.2s;
+}
+
+/* 프레임 영역을 검정 30%로 어둡게 (참고 영상 기준) */
+/* 클릭하면 닫히는 영역은 화면 전체(배경 영상·외부 검색 카드 포함), 어둡게 하는 건 프레임 폭만 */
+.search-dropdown__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+}
+
+.search-dropdown__backdrop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: var(--frame-width);
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+}

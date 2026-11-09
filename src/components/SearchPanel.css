@@ -1,0 +1,48 @@
+/* 프레임 오른쪽에 고정된 검색 카드 (PC 시안: 프레임과 102px 간격, top 189px) */
+.search-panel {
+  position: fixed;
+  top: 189px;
+  left: calc(50% + var(--frame-width) / 2 + 102px);
+  width: 413px;
+  padding: 67px 48px 56px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* 창 너비가 프레임(500) + 간격(102×2) + 카드(413×2)보다 좁으면 카드가 잘리므로 숨김
+   (태블릿·작은 노트북·휴대폰은 헤더 검색 버튼 사용) */
+@media (max-width: 1529px) {
+  .search-panel {
+    display: none;
+  }
+}
+
+/* 로고(왼쪽) + SNS(오른쪽) 한 줄, 아래 검색창까지 30px */
+.search-panel__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* 로고 원본 크기(145px) */
+.search-panel__logo img {
+  width: 145px;
+}
+
+/* SNS: 갈색 단색 원형 28px, 간격 8px. 마우스를 올리면 살짝 흐려짐 */
+.search-panel__sns {
+  display: flex;
+  gap: 8px;
+}
+
+.search-panel__sns a {
+  display: flex;
+  transition: opacity 0.2s ease;
+}
+
+.search-panel__sns a:hover {
+  opacity: 0.75;
+}

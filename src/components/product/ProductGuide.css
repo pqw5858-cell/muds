@@ -1,0 +1,52 @@
+.product-guide__list {
+  margin: 21px 20px 0;
+  border-top: 1px solid var(--ink);
+}
+
+.product-guide__list > li {
+  border-bottom: 1px solid var(--line);
+}
+
+.product-guide__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* 아코디언: grid 0fr → 1fr */
+.product-guide__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease;
+}
+
+.product-guide__body.is-open {
+  grid-template-rows: 1fr;
+}
+
+.product-guide__body > ul {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 19px;
+  color: #555;
+}
+
+.product-guide__body li {
+  position: relative;
+  padding-left: 10px;
+}
+
+.product-guide__body li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+}
+
+.product-guide__body li:last-child {
+  margin-bottom: 16px;
+}

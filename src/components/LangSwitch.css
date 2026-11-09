@@ -1,0 +1,28 @@
+/* KO | EN: 고른 쪽 진하게, 사이에 세로선 */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-latin);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.lang-switch button {
+  padding: 4px 6px;
+  color: #979797;
+  transition: color 0.2s ease;
+}
+
+.lang-switch button + button {
+  border-left: 1px solid currentColor;
+  border-left-color: var(--gray-300);
+}
+
+.lang-switch button:hover,
+.lang-switch button[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+.lang-switch button[aria-pressed="true"] {
+  font-weight: 700;
+}

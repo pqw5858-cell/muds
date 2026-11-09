@@ -1,0 +1,11 @@
+/* 상세페이지의 탭 영역(상세정보·리뷰·구매안내) 공통 */
+.product-section {
+  padding-top: var(--space-10);
+  /* 탭으로 이동했을 때 헤더+탭 아래에서 제목이 보이도록 */
+  scroll-margin-top: calc(var(--header-height) + var(--tab-height));
+}
+
+.product-section + .product-section {
+  margin-top: var(--space-10);
+  border-top: 8px solid #f7f7f7;
+}
