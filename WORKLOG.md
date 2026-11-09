@@ -558,3 +558,10 @@
 - 사용자 요청: 커서 이미지 이름을 "cursor-img" 형식으로.
 - 변경: `C_line_32/64.png` → `cursor-img-32/64.png`, `C_line_tilt_32/64.png` → `cursor-img-tilt-32/64.png`(git mv로 이력 유지). 저장소에 안 올리는 원본 `C_line_512.png` → `cursor-img-512.png`(.gitignore도 수정). `index.css` 커서 경로·주석 수정.
 - 검증: 개발 서버 CSS에 새 이름 4개 연결, `vite build` 성공.
+
+## 2026-11-09: 파비콘
+
+- 사용자 요청: 이미지 폴더의 `favicon.png`(로고 마크, 241×242, 투명 배경)를 파비콘으로, 저장소·배포 사이트에도 반영.
+- 추가: `public/favicon-32.png`, `public/favicon-192.png`(투명, 정사각형으로 맞춤), `public/apple-touch-icon.png`(180px, 흰 배경 + 여백 — 아이폰 홈 화면은 투명 부분이 검게 보여서). `index.html`에 link 3개.
+- 원본 `src/images/favicon.png`는 사이트에서 직접 쓰지 않아 .gitignore에 추가(폴더에는 남김).
+- 검증: `vite build` 결과 dist에 3개 포함, 개발 서버에서 200 image/png.

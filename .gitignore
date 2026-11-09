@@ -31,6 +31,7 @@ dist-ssr
 src/fonts/*.otf
 src/images/B_cheong_*
 src/images/cursor-img-512.png
+src/images/favicon.png
 src/images/tap-bar-icon-05.png
 
 # 환경 변수 파일 (Firebase·토스 키, Vercel 토큰)
