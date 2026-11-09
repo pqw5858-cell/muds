@@ -542,3 +542,8 @@
 - `vercel link`가 `.env.local` 끝에 `VERCEL_OIDC_TOKEN`을 추가함(기존 값은 그대로).
 - 배포 주소: https://muds.vercel.app — 메인·상품 상세·로그인·브랜드·이벤트 상세 화면 정상, 콘솔 오류 없음, 하위 주소 직접 접속 200.
 - 남은 일(사용자): Firebase 콘솔 → Authentication → 설정 → 승인된 도메인에 `muds.vercel.app` 추가(안 하면 배포 사이트에서 구글 로그인 안 됨).
+
+## 2026-11-09: README 글꼴 출처 보강
+
+- 사용자 요청: 이벤트 배너 이미지에 쓴 글꼴도 명시 — 붉어진 선비 배너는 제주한라산체, 갓잔 배너의 NEW는 Segoe UI.
+- 변경: README 출처의 글꼴을 사이트 글꼴(Pretendard·Roboto·부산단디명조, 쓰는 곳)과 배너 이미지 글꼴(제주한라산체·Segoe UI, 이미지 속 글자라 글꼴 파일은 불러오지 않음)로 나눠 적음. 글꼴 파일은 추가하지 않음.
