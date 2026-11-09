@@ -531,3 +531,14 @@
 
 - 사용자 결정: 청색보다 이전 이미지가 나음 → `index.css`의 `--cursor`, `--cursor-hover`를 다시 C_line 이미지로. B_cheong 이미지 파일은 아직 폴더에 남아 있음(코드에서는 안 씀).
 - 검증: 개발 서버 CSS에 C_line 4개 연결 확인, `vite build` 성공.
+
+## 2026-11-09: GitHub 저장소 · Vercel 배포
+
+- 사용자 결정: 공개 저장소, 사이트에서 쓰지 않는 파일은 올리지 않음, 배포는 Vercel.
+- 저장소: https://github.com/pqw5858-cell/muds (공개, main). 커밋 작성자는 GitHub noreply 주소(개인 이메일 비공개).
+- `.gitignore` 추가: `.vercel`, `.env*`, 루트 화면 캡처(`/*.png`), 쓰지 않는 `src/fonts/*.otf`, `B_cheong_*`, `C_line_512.png`, `tap-bar-icon-05.png`. 파일은 폴더에 그대로 있음. 커밋 전 비밀 키 검사 이상 없음.
+- README: Vite 기본 설명 → 프로젝트 소개(기술, 기능, 페이지, 실행 방법, 폴더 구조, 출처).
+- Vercel: 프로젝트 `muds`(팀 sujeong1), GitHub 연결 → main에 push하면 자동 배포. `vercel.json`으로 모든 주소를 index.html로(하위 주소 직접 접속·새로고침 대응). 환경 변수 7개(Firebase 6, 토스 1)를 Production·Preview에 등록 — 브라우저용 공개 키라 Config 형식.
+- `vercel link`가 `.env.local` 끝에 `VERCEL_OIDC_TOKEN`을 추가함(기존 값은 그대로).
+- 배포 주소: https://muds.vercel.app — 메인·상품 상세·로그인·브랜드·이벤트 상세 화면 정상, 콘솔 오류 없음, 하위 주소 직접 접속 200.
+- 남은 일(사용자): Firebase 콘솔 → Authentication → 설정 → 승인된 도메인에 `muds.vercel.app` 추가(안 하면 배포 사이트에서 구글 로그인 안 됨).
