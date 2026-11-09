@@ -565,3 +565,8 @@
 - 추가: `public/favicon-32.png`, `public/favicon-192.png`(투명, 정사각형으로 맞춤), `public/apple-touch-icon.png`(180px, 흰 배경 + 여백 — 아이폰 홈 화면은 투명 부분이 검게 보여서). `index.html`에 link 3개.
 - 원본 `src/images/favicon.png`는 사이트에서 직접 쓰지 않아 .gitignore에 추가(폴더에는 남김).
 - 검증: `vite build` 결과 dist에 3개 포함, 개발 서버에서 200 image/png.
+
+## 2026-11-09: 사이트 이름 MU:DS Kitchen
+
+- 사용자 요청: 홈페이지 이름을 영어로 "MU:DS" 뒤에 Kitchen만 붙여서.
+- 변경: `index.html` `<title>` MU:DS → MU:DS Kitchen (브라우저 탭·즐겨찾기 이름). 로고 이미지와 화면 문구는 그대로.
